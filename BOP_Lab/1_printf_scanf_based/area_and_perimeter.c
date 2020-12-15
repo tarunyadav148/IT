@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
-#define pi 22/7
+#define pi 22.0/7.0
 
 int main()
 {
