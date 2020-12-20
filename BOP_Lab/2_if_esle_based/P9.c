@@ -4,6 +4,7 @@ int main()
 {
     int num1,num2,num3;
 
+    printf("Enter three distinct number\n");
     printf("Enter first number:");
     scanf("%d",&num1);
     printf("Enter second number:");
