@@ -10,9 +10,9 @@ int main()
     scanf("%d",&num2);
 
     if (num1>num2)
-    printf("First %d number is greater",num1);
+    printf("First number %d is greater",num1);
     if (num2>num1)
-    printf("Second %d number is greater",num2);
+    printf("Second number %d is greater",num2);
 
     return 0;
 }
