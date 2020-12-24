@@ -8,8 +8,9 @@ int main()
 	//inputing requiered data
 	printf("Enter number of days:");
 	scanf("%d",&num);
-	printf("Enter current date(dd mm yyyy):");
+	printf("Enter reference date(dd mm yyyy):");
 	scanf("%d%d%d",&dd,&mm,&yyyy);
+	printf("\n$$Reference will be consider from next month and for leap year next year$$\n\n");
 	if(dd<=0||mm<=0||yyyy<=0||dd>31||mm>12)
 	{
 		printf("Invalid date");
@@ -50,7 +51,11 @@ int main()
 		{
 			days+=1;
 		}
-
+	if(days>31)
+	{
+		days=days-31;
+		months++;
+	}
 	printf("Output:- %d year:%d months:%d days",years,months,days);
 	printf("\nNumber of leap year:%d",leap_years);
 	
