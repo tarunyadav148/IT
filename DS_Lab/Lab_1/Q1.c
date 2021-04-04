@@ -11,7 +11,7 @@ int main()
     int arr[SIZE];
     int temp;
     
-    printf("Enter 10 numbers:");   //Taking input
+    printf("Enter 10 numbers: ");   //Taking input
     for (int i = 0; i < SIZE; i++)
     {
         scanf("%d",&arr[i]);
@@ -24,7 +24,7 @@ int main()
         arr[SIZE-1-i] = temp;
     }
 
-    printf("In reverse order:");    //Printing output
+    printf("In reverse order: ");    //Printing output
     for (int i = 0; i < SIZE; i++)
     {
         printf("%d ",arr[i]);
