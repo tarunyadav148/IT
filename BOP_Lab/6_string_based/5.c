@@ -10,13 +10,13 @@ int main()
 
     while(string1[lenght1]!='\0')
     {
-    	string3[lenght1]=string1[lenght1];
+    	string3[lenght1]=string1[lenght1];			//storing string1 in string3
     	lenght1++;
 	}
 	
 	while(string2[lenght2]!='\0')
     {
-    	string3[lenght1+lenght2]=string2[lenght2];
+    	string3[lenght1+lenght2]=string2[lenght2];		//then storing string2 in string3
     	lenght2++;
 	}
 	

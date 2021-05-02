@@ -8,7 +8,7 @@ int main()
     gets(string1);
     gets(string2);
     
-    strcat(string1,string2);
+    strcat(string1,string2);	//concatinating string2 in string1
     
     printf("%s",string1);
 

@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 struct student
 {
@@ -84,6 +85,18 @@ void not_paid_fee(struct student s[],int size)	//function to print details of st
 	}
 }
 
+int get_choice()
+{
+	int choice;
+	printf("\nEnter your choice:\n");
+	printf("0:Exit\n");
+	printf("1:Print details of student who get marks greater than average\n");
+	printf("2:Print detail of toppers\n");
+	printf("3:Print details of student who not paid fee");
+	scanf("%d",&choice);
+	return choice;
+}
+
 int main()
 {
 	int n,i;
@@ -95,8 +108,27 @@ int main()
 	{
 		s[i]=input();
 	}
-	toppers(s,n);
-	marks_greater_than_average(s,n);
-	not_paid_fee(s,n);
+	int choice =get_choice();
+	do{							//use of do while loop
+		switch (choice)		//use of switch
+		{
+		case 0:
+			exit(0);
+			break;
+		case 1:
+			marks_greater_than_average(s,n);
+			break;
+		case 2:
+			toppers(s,n);
+			break;
+		case 3:
+			not_paid_fee(s,n);
+			break;
+		default:
+			printf("Invalid choice");
+			break;
+		}
+		choice=get_choice();			//fuction calling
+	}while(1);
     return 0;
 }

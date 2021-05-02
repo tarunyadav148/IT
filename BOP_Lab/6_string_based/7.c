@@ -9,11 +9,15 @@ int main()
 
     while(s[i]!='\0')
     {
-    	if(s[i]=='A'||s[i]=='E'||s[i]=='I'||s[i]=='O'||s[i]=='U'||s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+    	if(s[i]=='A'||s[i]=='E'||s[i]=='I'||s[i]=='O'||s[i]=='U'||s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+		{
     		vowels++;
-		}else if((s[i]>'A'&&s[i]<'Z')||(s[i]>'a'&&s[i])){
+		}
+		else if((s[i]>'A'&&s[i]<'Z')||(s[i]>'a'&&s[i])){
 			consonants++;
-		}else{
+		}
+		else
+		{
 			others++;
 		}
 		i++;

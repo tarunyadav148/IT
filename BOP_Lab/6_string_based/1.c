@@ -2,12 +2,12 @@
 
 int main()
 {
-    char s[100];
-    int lenght=0;
+    char string[100];
+    int lenght=0;	
 
-    gets(s);
+    gets(string);		
 
-    while(s[lenght]!='\0')
+    while(string[lenght]!='\0')
     {
     	lenght++;
 	}

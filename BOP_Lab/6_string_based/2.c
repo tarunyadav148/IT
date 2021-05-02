@@ -2,14 +2,14 @@
 
 int main()
 {
-    char s[100];
+    char string[100];
     int i=0,count=0;
 
-    gets(s);
+    gets(string);
 
-    while(s[i]!='\0')
+    while(string[i]!='\0')
     {
-    	if(s[i]=='A'){
+    	if(string[i]=='A'){
     		count++;
 		}
 		i++;

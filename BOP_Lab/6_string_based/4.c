@@ -2,24 +2,24 @@
 
 int main()
 {
-    char s[100],temp;
+    char string[100],temp;
     int lenght=0,i;
 
-    scanf("%s",s);
+    scanf("%s",string);
 
-    while(s[lenght]!='\0')
+    while(string[lenght]!='\0')		//counting lenght of string
     {
     	lenght++;
 	}
     
     for(i=0;i<lenght/2;i++)
     {
-    	temp=s[i];
-    	s[i]=s[lenght-1-i];
-    	s[lenght-1-i]=temp;
+    	temp=string[i];
+    	string[i]=string[lenght-1-i];
+    	string[lenght-1-i]=temp;
 	}
     
-    printf("%s",s);
+    printf("%s",string);
 
     return 0;
 }
