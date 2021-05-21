@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(77, 165, 104);
+}
+
+h1{
+    background-color: rgb(201, 78, 40);
+}
+
+
+p{
+    background-color: rgb(23, 172, 23);
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+}

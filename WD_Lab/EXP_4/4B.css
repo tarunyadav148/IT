@@ -1,0 +1,20 @@
+body{
+background-color: rgb(124, 196, 95);
+}
+td, th {
+  width: 4rem;
+  height: 2rem;
+  border: 2px solid rgba(1, 14, 3, 0.692);
+  text-align: center;
+}
+th {
+  background: mediumaquamarine;
+  border-color: rgba(3, 0, 0, 0.774);
+}
+body {
+  padding: 4rem;
+}
+
+td:hover {
+  background-color: #2433b9;
+}
