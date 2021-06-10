@@ -23,6 +23,17 @@ Matrix* createMatrix(int rows ,int cols)
     return matrx;
 }
 
+void readMatrix(Matrix *matrx)
+{
+    for(int i=0;i<matrx->rows;i++)
+    {
+        for(int j=0;j<matrx->cols;j++)
+        {
+            scanf("%d",&matrx->matrix[i][j]);
+        }
+    }
+}
+
 typedef struct
 {
     int row;
@@ -114,22 +125,28 @@ SparseMatrix* Transpose(SparseMatrix* sparsematrix)
     return transpose;
 }
 
+
 SparseMatrix* Multiplication(SparseMatrix *m1,SparseMatrix *m2)
 {
+    if(m1->term[0].col!=m2->term[0].row)
+    {
+        printf("Multiplication not possible\n");
+        exit(0);
+    }
+    
     SparseMatrix *tm2 = Transpose(m2);
-    SparseMatrix *mul = createSparseMatrix(0,0,0);
 
     int rows1 = m1->term[0].row;
     int cols1 = m1->term[0].col;
     int totalterm1 = m1->term[0].value;
-    int *rowTerms1 = (int*) calloc(cols1,sizeof (int));
-    int *stratingIndex1 = (int*) calloc(cols1,sizeof (int));
+    int *rowTerms1 = (int*) calloc(rows1,sizeof (int));
+    int *stratingIndex1 = (int*) calloc(rows1,sizeof (int));
     stratingIndex1[0] = 1;
     for(int i=1;i<=totalterm1;i++)
     {
-        rowTerms1[m1->term[i].col]++;
+        rowTerms1[m1->term[i].row]++;
     }
-    for(int i=1;i<cols1;i++)
+    for(int i=1;i<rows1;i++)
     {
         stratingIndex1[i] = stratingIndex1[i-1] + rowTerms1[i-1];
     }
@@ -137,28 +154,64 @@ SparseMatrix* Multiplication(SparseMatrix *m1,SparseMatrix *m2)
     int rows2 = tm2->term[0].row;
     int cols2 = tm2->term[0].col;
     int totalterm2 = tm2->term[0].value;
-    int *rowTerms2 = (int*) calloc(cols2,sizeof (int));
-    int *stratingIndex2 = (int*) calloc(cols2,sizeof (int));
+    int *rowTerms2 = (int*) calloc(rows2,sizeof (int));
+    int *stratingIndex2 = (int*) calloc(rows2,sizeof (int));
     stratingIndex2[0] = 1;
     for(int i=1;i<=totalterm2;i++)
     {
-        rowTerms2[tm2->term[i].col]++;
+        rowTerms2[tm2->term[i].row]++;
     }
-    for(int i=1;i<cols1;i++)
+    for(int i=1;i<rows2;i++)
     {
         stratingIndex2[i] = stratingIndex2[i-1] + rowTerms2[i-1];
     }
+    
+    int nonzero1 =0 ,nonzero2 =0;
+    for(int i=0;i<rows1;i++)
+    {
+        if(rowTerms1[i]!=0)
+            nonzero1++;
+    }
+    for(int i=0;i<rows2;i++)
+    {
+        if(rowTerms2[i]!=0)
+            nonzero2++;
+    }
+    SparseMatrix *mul = createSparseMatrix(rows1,rows2,nonzero1*nonzero2);
+    int k =1;
 
     Term t;
     t.value = 0;
 
-    for(int i=1;i<=totalterm1;i++)
+    for(int i=0;i<rows1;i++)
     {
-        
-    }
-    
-}
+        t.row = i;
+        for(int j=0;j<rows2;j++)
+        {
+            t.col = j;
+            for(int p=stratingIndex1[i];p<stratingIndex1[i]+rowTerms1[i];p++)
+            {
+                    for(int q=stratingIndex2[j];q<stratingIndex2[j]+rowTerms2[j];q++)
+                    {
+                        if(m1->term[p].col==tm2->term[q].col)
+                        {
+                            t.value += m1->term[p].value*tm2->term[q].value;
+                        }
+                    }
+            }
+            if(t.value!=0)
+            {
+                mul->term[k] = t;
+                k++;
+                t.value = 0;
+            } 
+        }
 
+    }
+    mul->term = realloc(mul->term,sizeof(Term)*(k));
+    mul->term[0].value = k-1;
+    return mul;
+}
 
 void printSparseMatrix(SparseMatrix* sparsematrix)
 {
@@ -176,23 +229,33 @@ void printSparseMatrix(SparseMatrix* sparsematrix)
 
 int main()
 {
-    int rows,cols;
-    printf("Enter number of rows and columns on matrix:");
-    scanf("%d%d",&rows,&cols);
+    int rows1,cols1,rows2,cols2;
+    printf("Enter number of rows and columns on matrix 1:");
+    scanf("%d%d",&rows1,&cols1);
 
-    Matrix* matrx = createMatrix(rows,cols);
+    Matrix* matrx1 = createMatrix(rows1,cols1);
 
-    printf("Enter matrix:\n");
-    readMatrix(matrx);
+    printf("Enter matrix 1:\n");
+    readMatrix(matrx1);
 
+    printf("Enter number of rows and columns on matrix 2:");
+    scanf("%d%d",&rows2,&cols2);
 
-    SparseMatrix *sparsematrix = getSparseMatrix(matrx);
-    SparseMatrix *transpose = Transpose(sparsematrix);
+    Matrix* matrx2 = createMatrix(rows2,cols2);
 
-    printf("Tanspose of sparse matrix:\n");
-    printSparseMatrix(sparsematrix);
-    printf("is:\n");
-    printSparseMatrix(transpose);
+    printf("Enter matrix 2:\n");
+    readMatrix(matrx2);
+
+    printf("\nSparseMatrix 1:\n");
+    SparseMatrix* m1 = getSparseMatrix(matrx1);
+    printSparseMatrix(m1);
+    printf("SparseMatrix 2:\n");
+    SparseMatrix* m2 = getSparseMatrix(matrx2);
+    printSparseMatrix(m2);
+    
+    SparseMatrix *mul = Multiplication(m1,m2);
+    printf("\nMultiplication of SparseMatrix 1 and SparseMatrix 2:\n");
+    printSparseMatrix(mul);
 
     return 0;
 }
