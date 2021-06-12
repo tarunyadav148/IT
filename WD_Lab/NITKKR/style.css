@@ -6,7 +6,7 @@ body{
 
 /*head of the website*/
 #main-head{
-    background-color: cyan;
+    color: rgb(75, 5, 5);
  } 
 
 
@@ -56,6 +56,17 @@ nav{
     border-radius: 5px;
     
 }
+.nav-opt a{
+    color: white;
+}
+
+/*marquee headine*/
+.headline{
+    margin-top: 20px;
+    background-color: rgb(65, 61, 61);
+    padding: 5px;
+    color: white;
+}
 
 /*Body section*/
 .main-body{
@@ -70,6 +81,7 @@ nav{
     float: right;
 }
 #notify-head{
+    /* background-image: linear-gradient(#6c0c0e,#aa3537); */
     background-color: #6c0c0e;
     width: 284px;
     padding: 10px;
@@ -117,7 +129,36 @@ nav{
 }
 
 /*Footer*/
-footer{
+.footer{
     margin-top: 300px;
-    background-color:rgb(117, 112, 112);
+    background-color:rgb(46, 43, 43);
+}
+.main-footer{
+    display: flex;
+    margin-top: 300px;
+    color: white;
+    margin-top: 10px;
+}
+.main-footer a{
+    color: white;
+}
+.foot-two{
+    margin-left: 300px;
+}
+.foot-three{
+    margin-left: 300px;
+}
+.footer p{
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.foot-four{
+    margin-left: 450px;
+}
+.foot-img{
+    margin-top: 30px;
+    margin-left: 20px;
+    height: 60px;
+    border-radius: 10px;
 }
