@@ -1,0 +1,123 @@
+/*body*/
+body{
+    background-color: rgb(230, 230, 218);
+}
+
+
+/*head of the website*/
+#main-head{
+    background-color: cyan;
+ } 
+
+
+#nit-heading{
+    /* background-image: linear-gradient(rgb(170, 139, 139),rgb(230, 132, 132)); */
+    /* background-image: linear-gradient(rgb(233, 119, 119),rgb(202, 150, 150)); */
+    position: relative;
+    float:right;
+    font-size: 60px;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    color: rgb(75, 5, 5);
+}
+
+#ini-heading{
+    /* background-image: linear-gradient(rgb(233, 175, 175),rgb(202, 150, 150)); */
+    /* background-image: linear-gradient(rgb(170, 139, 139),rgb(230, 132, 132)); */
+    position: relative;
+    float: right;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-right: 330px;
+    border-radius: 5px;
+    color: rgb(75, 5, 5);
+}
+
+
+/*logo of nit kkr website*/
+#logo{
+    width: 30vh;
+}
+
+/*navigation bar*/
+nav{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.nav-opt{
+    font-size: 20px;
+    background-color: #6c0c0e;
+    color: white;
+    padding: 10px;
+    margin-top: px;
+    border-radius: 5px;
+    
+}
+
+/*Body section*/
+.main-body{
+    display: flex;
+}
+
+/*notification box*/
+.notification{
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 300px;
+    float: right;
+}
+#notify-head{
+    background-color: #6c0c0e;
+    width: 284px;
+    padding: 10px;
+    text-align: center;
+    color: ivory;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+
+/*Slide show*/
+.slideshow{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+}
+
+#leftbtn{
+    position:absolute;
+    margin-top: 150px;
+}
+#rightbtn{
+    position:absolute;
+    margin-top: 150px;
+    margin-left: 662px;
+}
+#left{
+    padding: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    border-style: none;
+}
+#left:hover{
+    background-color: #ccc;
+}
+#right{
+    padding: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    border-style: none;
+}
+#right:hover{
+    background-color: #ccc;
+}
+
+/*Footer*/
+footer{
+    margin-top: 300px;
+    background-color:rgb(117, 112, 112);
+}
