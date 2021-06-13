@@ -39,25 +39,57 @@ body{
 /*logo of nit kkr website*/
 #logo{
     width: 30vh;
+    box-shadow: 10px 10px 5px grey;
 }
 
 /*navigation bar*/
 nav{
-    position: relative;
-    margin-top: 20px;
-    margin-left: 20px;
+    background-color:#6c0c0e;
 }
-.nav-opt{
-    font-size: 20px;
+nav ul{
+    list-style: none;
+    display: flex;
+    color: white;
+    margin-left: 15px;
+}
+nav ul li{
+    margin-right: 20px;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+nav ul li a{
+    color: white;
+}
+.home,nav ul li:hover{
+    background-color: #5e0406;
+}
+.nav-sub{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 10;;
+}
+.nav-sub ul{
+    margin-top: 14px;
+    margin-left: -15px;
+    position: absolute;
     background-color: #6c0c0e;
-    color: white;
-    padding: 10px;
-    margin-top: px;
-    border-radius: 5px;
-    
+    padding-left: 0px;
+    display: none;
 }
-.nav-opt a{
-    color: white;
+.nav-sub ul li{
+    width: 150px;
+    margin-right: 0px;
+}
+nav ul li:hover .nav-sub ul{
+    display:block;
+}
+.nav-sub ul li:hover{
+    background-color: #5e0406;
+    box-shadow: 2px 2px grey;
+}
+.nav-sub ul li:hover .nav-sub ul{
+    display: block;
 }
 
 /*marquee headine*/
@@ -76,8 +108,8 @@ nav{
 /*notification box*/
 .notification{
     margin-top: 50px;
-    margin-right: 20px;
-    margin-left: 300px;
+    margin-right: 10px;
+    margin-left: 230px;
     float: right;
 }
 #notify-head{
@@ -95,9 +127,14 @@ nav{
 /*Slide show*/
 .slideshow{
     position: relative;
-    margin-top: 50px;
-    margin-left: 20px;
+    margin-top: 45px;
+    margin-left: 100px;
+    margin-right: 0px;
     display: flex;
+}
+
+.main-body img{
+    box-shadow: 10px 10px 5px grey;
 }
 
 #leftbtn{
@@ -114,6 +151,8 @@ nav{
     background-color: transparent;
     font-size: 30px;
     border-style: none;
+    color: white;
+    box-shadow: 2px grey;
 }
 #left:hover{
     background-color: #ccc;
@@ -123,6 +162,8 @@ nav{
     background-color: transparent;
     font-size: 30px;
     border-style: none;
+    color: white;
+    box-shadow: 2px grey;
 }
 #right:hover{
     background-color: #ccc;
@@ -132,6 +173,9 @@ nav{
 .footer{
     margin-top: 300px;
     background-color:rgb(46, 43, 43);
+}
+.footer a:hover{
+    color: blue;
 }
 .main-footer{
     display: flex;
@@ -155,6 +199,9 @@ nav{
 }
 .foot-four{
     margin-left: 450px;
+}
+.foot-four img:hover{
+    box-shadow: 5px 5px grey;
 }
 .foot-img{
     margin-top: 30px;

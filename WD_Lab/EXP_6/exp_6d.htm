@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Toss</title>
+    </head>
+    <body>
+        <h1>Experiment 6-D</h1>
+
+        <div class="coin-toss">
+
+            <div class="coin-img"><img></div>
+
+            <button class="btn-toss" style="margin-bottom: 10px;">Toss Button</button>
+
+            <table class="table" border="1">
+                <tr>
+                    <th>Face</th>
+                    <th>Frequency</th>
+                    <th>Percentage</th>
+                </tr>
+
+                <tr>
+                    <td >H</td>
+                    <td id="headfreq">0</td>
+                    <td id="headper">0</td>
+                </tr>
+
+                <tr>
+                    <td >T</td>
+                    <td id="tailfreq">0</td>
+                    <td id="tailper">0</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <script>
+
+            var Headfreq = 0;
+            var Tailfreq = 0;
+
+            const tossbtn = document.querySelector('.btn-toss');
+
+            tossbtn.addEventListener('click',toss);
+
+            function toss(){
+                const tossResult = Math.floor(Math.random()*2);
+                if(tossResult === 0){
+                    Headfreq++;
+                    
+                }
+                else{
+                    Tailfreq++;
+                }
+
+                showImg(tossResult)
+
+                const headfreq = document.querySelector('#headfreq');
+                const headper = document.querySelector('#headper');
+                const tailfreq = document.querySelector('#tailfreq');
+                const tailper = document.querySelector('#tailper');
+
+                headfreq.innerHTML = ''+ Headfreq;
+                headper.innerHTML = ''+ Headfreq/(Headfreq+Tailfreq)*100;;
+                tailfreq.innerHTML = ''+ Tailfreq;
+                tailper.innerHTML = ''+ Tailfreq/(Headfreq+Tailfreq)*100;;
+                
+            }
+
+            function showImg(tossResult)
+            {
+                const div = document.querySelector('.coin-img');
+
+                if(tossResult === 0){
+
+                    div.firstElementChild.src="head.png";
+                    div.firstElementChild.style.width = '150px';
+                }else{
+                    div.firstElementChild.src="tail.jpg";
+                    div.firstElementChild.style.width = '150px';
+                }
+
+            }
+        </script>
+
+    </body>
+</html>

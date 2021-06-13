@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>Experiment 5-1-a-g</title>
+        <style>
+            .bodybefore{
+                background-image: linear-gradient(rgb(190, 68, 170),rgb(226, 178, 88));
+            }
+            .bodyafter{
+                background-image: linear-gradient(rgb(59, 173, 226),rgb(18, 85, 148));
+            }
+            #myform{
+                width: 40vh;
+                top: 20%;
+                left: 40%;
+                background-color: white;
+                padding: 25px;
+                position: absolute;
+                border-radius: 40px;
+            }
+            .h{
+                position: relative;
+                left: 30%;
+            }
+
+            .h_hover{
+                position: relative;
+                left: 30%;
+                text-decoration: underline;
+                font-style: italic;
+            }
+            
+            #myform form{
+                position: relative;
+                left:20%
+            }
+            .in{
+                margin: 5px 0px 0px;
+                width: 70%;
+                height: 30px;
+                background-color: #fafafa;
+                border-style:solid;
+            }
+            .Btn{
+                position: relative;
+                margin: 5px 0px 0px;
+                padding: 10px;
+                left: 10%;
+                border-radius: 10px;
+            }
+            .signedup{
+                display: none;
+                position: relative;
+                left: 10%;
+            }
+        </style>
+        
+    </head>
+    <body class="bodybefore" onload="func()">
+        <div id="myform">
+            <h1 class="h" onmouseover="Hover()" onmouseout="RemoveHover()">Sign Up</h1>
+            <form onsubmit="validate()">
+                <input class="in" type="text" id="name" placeholder="Name" required><br/>
+                <input class="in" type="number" id="age" placeholder="Age" required><br/>
+                <input class="in" type=text id="username" placeholder="User Name" required><br/>
+                <input class="in" type="password" id="password" placeholder="Password" required><br/>
+                <input class="Btn" type="submit" id="submit" value="submit">
+                <input class="Btn" type="reset" id="reset">
+            </form>
+            <div class="signedup">
+                <p>Please Enter details.....</p>
+            </div>
+        </div>
+        <script>
+            function Hover(){
+                const h = document.querySelector('h1');
+                h.classList.add('h_hover');
+            }
+            function RemoveHover(){
+                const h = document.querySelector('h1');
+                h.classList.remove('h_hover');
+            }
+            function func(){
+                alert("Sign Up page");
+                setTimeout(Hides,10000);
+                setTimeout(Change,5000);
+            }
+            function Change(){
+                if(document.body.className == 'bodybefore')
+                {
+                    document.body.classList.remove('bodybefore');
+                    document.body.classList.add('bodyafter');
+                }else{
+                    document.body.classList.remove('bodyafter');
+                    document.body.classList.add('bodybefore');
+                }
+                setTimeout(Change,5000);
+            }
+            function validate(){
+                const name = document.getElementById('name');
+                const age = document.getElementById('age');
+                if(!(age.value>1&age.value<150))
+                {
+                    alert('Enter valid age between 1 and 150');
+                }else{
+                    window.confirm("Confirm your Hides");
+                }
+            }
+            function Hides(){
+                const sg = document.querySelector('.signedup');
+                console.log(sg);
+                sg.style.display = "block";
+            }
+        </script>
+    </body>
+</html>

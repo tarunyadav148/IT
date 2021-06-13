@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form">
+        <p>First Name</p>
+        <input type="text" name="firstn" id="fn" required>
+        <p>Last Name</p>
+        <input type="text" name="lastn" id="ln" required>
+        <p>Mobile no.</p>
+        <input type="number" name="number" id="mn" required>
+        <p>Email</p>
+        <input type="email" name="email" id="em" required>
+        <p>Address</p>
+        <textarea name="address" id="add" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+        <input type="submit" onclick="myfunc()" value="Submit">
+        <button>Cancel</button>
+    </form>
+    <script>
+        function myfunc()
+        {
+            var inobj=document.forms["form"]["number"].value;
+        if(inobj<1000000000||inobj>=10000000000){
+        alert("Enter valid Mobile no.");
+        return;
+    }
+    var inobj=document.forms['form']['email'].value;
+    if(!((1+inobj.search("@"))&&(1+inobj.search(".")))){
+        alert("Enter valid Email");
+    }
+    }
+    </script>
+</body>
+</html>

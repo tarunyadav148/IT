@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Experiment 5-1-h</title>
+    </head>
+    <body>
+       Enter fisrt number:<input type="number" id="num1">
+       Enter second number:<input type="number" id="num2">
+       <button onclick="sum()">Sum</button>
+        <script>
+            class Calculator{
+                constructor(num1,num2){
+                    this.num1 = num1;
+                    this.num2= num2;
+                }
+                add(){
+                    return this.num1+this.num2;
+                }
+            }
+            function sum(){
+                const num1 = Number(document.getElementById('num1').value);
+                const num2 = Number(document.getElementById('num2').value);
+                calc = new Calculator(num1,num2);
+                alert(`Sum is ${calc.add()}`);
+            }
+        </script>
+    </body>
+</html>

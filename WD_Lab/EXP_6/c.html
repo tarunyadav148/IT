@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>first num</p>
+    <input type="number" name="num1" id="num1" required>
+    <br>
+    <p>second num</p>
+    <input type="number" name="num2" id="num2" required>
+    <br>
+    <br>
+    <button onclick="myfunc(this)">ADD</button>
+    <button onclick="myfunc(this)">Subtract</button>
+    <button onclick="myfunc(this)">Multiply</button>
+    <button onclick="myfunc(this)">divide</button>
+    <button onclick="myfunc(this)">power</button>
+    <div id="ans"></div>
+    <script>
+        function myfunc(obj){
+           if(obj.innerHTML=="ADD")
+           {
+               var x=
+               document.getElementById('ans').innerHTML=document.getElementById('num1').value*1+document.getElementById('num2').value*1;
+           }
+           else if(obj.innerHTML=="Subtract")
+           {
+               document.getElementById('ans').innerHTML=document.getElementById('num1').value-document.getElementById('num2').value;
+           }
+           else if(obj.innerHTML=="Multiply")
+           {
+               document.getElementById('ans').innerHTML=document.getElementById('num1').value*document.getElementById('num2').value;
+           }
+           else if(obj.innerHTML=="divide")
+           {
+               document.getElementById('ans').innerHTML=document.getElementById('num1').value/document.getElementById('num2').value;
+           }
+           else if(obj.innerHTML=="power")
+           {
+               document.getElementById('ans').innerHTML=Math.pow(document.getElementById('num1').value,document.getElementById('num2').value);
+           }
+        }
+    </script>
+</body>
+</html>

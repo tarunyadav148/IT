@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter a Number</p>
+    <input id="numb" type="number" max="99999" min="1" required>
+    <button onclick="displayDigits()">Enter</button>
+    <div id="div"></div>
+    <script>
+        function Qr(num){return{quotioned:Math.floor(num/10),remainder:(num%10)};}
+        function displayDigits()
+        {
+            var t=document.getElementById("numb").value;
+            var ans="";
+            while(t!=0)
+            {
+                var x=Qr(t);
+                t=x.quotioned;
+                ans=x.remainder+" "+ans;
+            }
+            document.getElementById("div").innerHTML=ans;
+        }
+    </script>
+</body>
+</html>
