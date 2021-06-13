@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            .body{
+                background-color: rgb(243, 103, 98);
+            }
+            #myform{
+                width: 40vh;
+                top: 20%;
+                left: 40%;
+                background-color: white;
+                padding: 25px;
+                position: absolute;
+                border-radius: 40px;
+            }
+            .h{
+                position: relative;
+                left: 20%;
+            }
+
+            .h_hover{
+                position: relative;
+                left: 30%;
+                text-decoration: underline;
+                font-style: italic;
+            }
+            
+            #myform form{
+                position: relative;
+                left:20%
+            }
+            .in{
+                margin: 5px 0px 0px;
+                width: 70%;
+                height: 30px;
+                background-color: #fafafa;
+                border-style:solid;
+            }
+            .Btn{
+                position: relative;
+                margin: 5px 0px 0px;
+                padding: 10px;
+                left: 10%;
+                border-radius: 10px;
+            }
+            .login{
+                display: none;
+                position: relative;
+                margin-left: 40px;
+                left: 10%;
+                color: red;
+                font-size: 15px;
+            }
+        </style>
+        
+    </head>
+    <body class="body">
+        <h1 style="color:rgb(26, 7, 7);text-align: center;">National Institute Of Technology</h1>
+        <h1 style="color:rgb(19, 4, 4);text-align: center;">Kurukshetra</h1>
+        <div id="myform">
+            <h1 class="h">User login</h1>
+            <form class="form">
+                <input class="in" type=text id="username" placeholder="User Name" required><br/>
+                <input class="in" type="password" id="password" placeholder="Password" required><br/>
+                <input class="Btn" type="submit" id="submit" value="submit">
+                <input class="Btn" type="reset" id="reset" value="reset">
+            </form>
+            <div class="login">
+                <p>Invalid credentials</p>
+            </div>
+        </div>
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit',validate);
+            function validate(e)
+            {
+                e.preventDefault();
+                const username = document.querySelector('#username').value;
+                const password = document.querySelector('#password').value;
+                if(username == 'nitkkr' && password == '1234')
+                {
+                    alert('Login Succesfully');
+                }
+                else{
+                    document.querySelector('.login').style.display = 'block';
+                }
+            }
+            document.querySelector('#reset').addEventListener('click',function(event){
+                document.querySelector('.login').style.display = 'none';
+                console.log('hhh')
+            })
+        </script>
+    </body>
+</html>
