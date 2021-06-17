@@ -27,4 +27,23 @@ function slideshow()
 }
 
 
+//Night mode
+setTimeout(nightmode,60000*60);
+function nightmode()
+{ 
+    
+    date = new Date;
+    if(date.getHours()>14||date.getHours()<5)
+    {
+        console.log("d")
+        document.body.style.backgroundColor = "rgb(173, 173, 172)";
+    }
+    else
+    {
+        document.body.style.backgroundColor = "rgb(230, 230, 218)";
+    }
+    
+}
+
+
 

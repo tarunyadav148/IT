@@ -67,7 +67,7 @@ nav ul li a{
 .nav-sub{
     box-sizing: border-box;
     position: absolute;
-    z-index: 10;;
+    z-index: 10;
 }
 .nav-sub ul{
     margin-top: 14px;
@@ -83,6 +83,7 @@ nav ul li a{
 }
 nav ul li:hover .nav-sub ul{
     display:block;
+    transition: (1);
 }
 .nav-sub ul li:hover{
     background-color: #5e0406;
@@ -156,6 +157,7 @@ nav ul li:hover .nav-sub ul{
 }
 #left:hover{
     background-color: #ccc;
+    transition: 1s;
 }
 #right{
     padding: 10px;
@@ -208,4 +210,227 @@ nav ul li:hover .nav-sub ul{
     margin-left: 20px;
     height: 60px;
     border-radius: 10px;
+}
+
+
+/*------------------------------------*/
+@media(max-width:700px)
+{
+    /*body*/
+body{
+    background-color: rgb(230, 230, 218);
+}
+
+
+/*head of the website*/
+#main-head{
+    color: rgb(75, 5, 5);
+ } 
+
+
+#nit-heading{
+    /* background-image: linear-gradient(rgb(170, 139, 139),rgb(230, 132, 132));
+    /* background-image: linear-gradient(rgb(233, 119, 119),rgb(202, 150, 150)); */
+    display: flex;
+    position: relative;
+    float:right;
+    font-size: 24px;
+    margin-right: 0px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    color: rgb(75, 5, 5);
+}
+
+#ini-heading{
+    /* background-image: linear-gradient(rgb(233, 175, 175),rgb(202, 150, 150)); */
+    /* background-image: linear-gradient(rgb(170, 139, 139),rgb(230, 132, 132)); */
+    position: relative;
+    float: right;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-right: 60px;
+    border-radius: 5px;
+    color: rgb(75, 5, 5);
+}
+
+
+/*logo of nit kkr website*/
+#logo{
+    width: 10vh;
+    box-shadow: 10px 10px 5px grey;
+}
+
+/*navigation bar*/
+nav{
+    background-color:#6c0c0e;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    color: white;
+    margin-left: 15px;
+}
+nav ul li{
+    margin-right: 20px;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+nav ul li a{
+    color: white;
+}
+.home,nav ul li:hover{
+    background-color: #5e0406;
+}
+.nav-sub{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 10;
+}
+.nav-sub ul{
+    margin-top: 14px;
+    margin-left: -15px;
+    position: absolute;
+    background-color: #6c0c0e;
+    padding-left: 0px;
+    display: none;
+}
+.nav-sub ul li{
+    width: 150px;
+    margin-right: 0px;
+}
+nav ul li:hover .nav-sub ul{
+    display:block;
+    transition: (1);
+}
+.nav-sub ul li:hover{
+    background-color: #5e0406;
+    box-shadow: 2px 2px grey;
+}
+.nav-sub ul li:hover .nav-sub ul{
+    display: block;
+}
+
+/*marquee headine*/
+.headline{
+    margin-top: 20px;
+    background-color: rgb(65, 61, 61);
+    padding: 5px;
+    color: white; 
+}
+
+/*Body section*/
+.main-body{
+    display: block;
+}
+
+/*notification box*/
+.notification{
+    margin-top: 50px;
+    float: bottom;
+    margin-right: 100px;
+}
+#notify-head{
+    /* background-image: linear-gradient(#6c0c0e,#aa3537); */
+    background-color: #6c0c0e;
+    width: 284px;
+    padding: 10px;
+    text-align: center;
+    color: ivory;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+
+/*Slide show*/
+.slideshow{
+    position: relative;
+    margin-top: 45px;
+    margin-left: 10px;
+    margin-right: 0px;
+    display: flex;
+}
+
+.main-body img{
+    box-shadow: 10px 10px 5px grey;
+    width: 500px;
+    margin-left: -5px;
+    height: 300px;
+}
+
+#leftbtn{
+    position:absolute;
+    margin-top: 150px;
+    margin-left: 0px;
+}
+#rightbtn{
+    position:absolute;
+    margin-top: 150px;
+    margin-left: 450px;
+}
+#left{
+    padding: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    border-style: none;
+    color: white;
+    box-shadow: 2px grey;
+}
+#left:hover{
+    background-color: #ccc;
+    transition: 1s;
+}
+#right{
+    padding: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    border-style: none;
+    color: white;
+    box-shadow: 2px grey;
+}
+#right:hover{
+    background-color: #ccc;
+}
+
+/*Footer*/
+.footer{
+    margin-top: 400px;
+    background-color:rgb(46, 43, 43);
+}
+.footer a:hover{
+    color: blue;
+}
+.main-footer{
+    display: flex;
+    margin-top: 300px;
+    color: white;
+    margin-top: 10px;
+}
+.main-footer a{
+    color: white;
+}
+.foot-two{
+    margin-left: 30px;
+}
+.foot-three{
+    margin-left: 30px;
+}
+.footer p{
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.foot-four{
+    margin-left: 0px;
+}
+.foot-four img:hover{
+    box-shadow: 5px 5px grey;
+}
+.foot-img{
+    margin-top: 30px;
+    margin-left: 20px;
+    height: 60px;
+    border-radius: 10px;
+}
 }
