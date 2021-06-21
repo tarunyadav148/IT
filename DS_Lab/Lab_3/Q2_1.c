@@ -74,6 +74,7 @@ int partition(int A[],int p,int r)
     return i-1;
 }
 
+//first element as pivot
 void quick_sort(int A[],int p,int r)
 {
     if(p<r)
