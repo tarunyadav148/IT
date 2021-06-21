@@ -194,9 +194,9 @@ int main()
     intersection.print();
     cout<<endl;
 
-    set subtration = s1.Subtraction(s2);
+    set subtraction = s1.Subtraction(s2);
     cout<<"Subtraction of element of s2 from s1: ";
-    subtration.print();
+    subtraction.print();
     cout<<endl;
 
     return 0;
