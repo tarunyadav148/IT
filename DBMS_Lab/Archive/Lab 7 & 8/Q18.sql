@@ -1,0 +1,3 @@
+SELECT Fname, Lname
+FROM EMPLOYEE
+WHERE Super_ssn IS NULL;

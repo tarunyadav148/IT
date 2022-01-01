@@ -1,0 +1,3 @@
+['dbd.pl'].
+['e5.pl'].
+schema(R), fds(F), candkey(R,F,K).

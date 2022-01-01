@@ -1,0 +1,2 @@
+DELETE FROM EMPLOYEE 
+WHERE Lname = ‘Brown’;

@@ -1,0 +1,4 @@
+
+['dbd.pl'].
+['e2.pl'].
+schema(R),fds(F),xplus(R,F,[a,c],Xplus).

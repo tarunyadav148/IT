@@ -1,0 +1,5 @@
+view:
+    select * from works_on;
+
+trigger:
+    update employee set salary='-30000' where ssn = '999887777';

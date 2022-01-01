@@ -1,0 +1,4 @@
+['dbd.pl'].
+['e2.pl'].
+schema(R), fds(F), finfplus(R,F,[[a,b],[c]]).
+schema(R), fds(F), finfplus(R,F,[[a,d],[b]]).

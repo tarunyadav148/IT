@@ -1,0 +1,3 @@
+['dbd.pl'].
+['e6.pl'].
+schema(R),fds(F),mincover(R,F,MinF).

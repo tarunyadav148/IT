@@ -1,0 +1,3 @@
+['dbd.pl'].
+['e4.pl'].
+schema(R), fds1(F1), fds2(F2), implies(R,F1,F2).
